@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="OSGI-INF/l10n/org.ict.kura.core.thing.creator.impl.ThingCreatorHrefConfig">
+  <OCD id="org.ict.kura.core.thing.creator.impl.ThingCreatorHref" name="ThingCreator" description="Configuration parameters | ThingCreator">
+    <AD id="base.href" type="String" name="Base Href" description="Base href of gateway to use for thing descriptions" default="http://localhost:8080/services"/>
+  </OCD>
+  <Designate pid="org.ict.kura.core.thing.creator.impl.ThingCreatorHref">
+    <Object ocdref="org.ict.kura.core.thing.creator.impl.ThingCreatorHref"/>
+  </Designate>
+</metatype:MetaData>

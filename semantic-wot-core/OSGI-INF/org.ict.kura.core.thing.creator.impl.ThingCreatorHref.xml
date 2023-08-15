@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.ict.kura.core.thing.creator.impl.ThingCreatorHref" configuration-policy="require" immediate="true" activate="activate" deactivate="deactivate" modified="updated">
+  <implementation class="org.ict.kura.core.thing.creator.impl.ThingCreatorHrefImpl"/>
+  <service>
+    <provide interface="org.ict.kura.thing.creator.ThingCreatorHref"/>
+    <provide interface="org.eclipse.kura.configuration.ConfigurableComponent"/>
+  </service>
+  <property name="service.pid" type="String" value="org.ict.kura.core.thing.creator.impl.ThingCreatorHref"/>
+</scr:component>

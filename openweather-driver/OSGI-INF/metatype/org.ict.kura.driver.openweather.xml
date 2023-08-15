@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us">
+  <OCD id="org.ict.kura.driver.openweather" name="NAME Driver" description="Name Driver">
+    <AD id="weather.client.apiKey" type="String" name="Api-Key" description="Api Key for OpenWeatherMap" default="7df8c19b9799805abc69546513e471c7"/>
+    <AD id="weather.cityName" type="String" name="City name" description="Name of the city for weather data" default="Dortmund"/>
+    <AD id="weather.stateCode" type="String" name="State code" description="State cide e.g. 'de' for weather data" default="de"/>
+    <AD id="weather.client.pollinterval" type="Integer" name="Poll interval" description="Pollinterval in s" default="60"/>
+    <AD id="thing.folder" type="String" name="Thing folder" description="Thing files with the sensor and actuator configurations" default=""/>
+  </OCD>
+  <Designate factoryPid="org.ict.kura.driver.openweather">
+    <Object ocdref="org.ict.kura.driver.openweather"/>
+  </Designate>
+</metatype:MetaData>

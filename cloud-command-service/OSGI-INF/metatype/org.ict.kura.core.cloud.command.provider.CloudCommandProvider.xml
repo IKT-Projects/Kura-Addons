@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us">
+  <OCD id="org.ict.kura.core.cloud.command.provider.CloudCommandProvider" name="CloudCommandProvider" description="Configuration parameters | Cloud Command Service">
+    <AD id="CloudSubscriber.target" type="String" name="Subscriber Target Filter" description="The pid of the Subscriber Service used to receive command messages from the cloud platform." default="(kura.service.pid=changeme)"/>
+    <AD id="CloudPublisher.target" type="String" name="Publisher Target Filter" description="The pid of the Data Service used to publish command response messages to the cloud platform." default="(kura.service.pid=changeme)"/>
+    <AD id="strategy" type="String" name="The RPC convert strategy" description="Two RPC strategies are supported: WoT payload and Thingsboard" default="wot">
+      <Option label="ThingsBoard" value="thingsBoard"/>
+      <Option label="WoT" value="wot"/>
+    </AD>
+  </OCD>
+  <Designate factoryPid="org.ict.kura.core.cloud.command.provider.CloudCommandProvider">
+    <Object ocdref="org.ict.kura.core.cloud.command.provider.CloudCommandProvider"/>
+  </Designate>
+</metatype:MetaData>

@@ -1,0 +1,127 @@
+things:
+- thing: Thing1
+  description: My first Thing
+  properties:
+  - property: tempature-outdoor
+    template: Temperature
+    form:
+      href: "https://ikt-service.de/things/Thing1/properties/Temperature"
+      contentType: "application/json"
+      subprotocol: "https"
+    binding:
+      type: knx
+      data:
+        ga: "0/9/15"
+        dpt: "5.001"
+  - property: humidity
+    template: Humidity
+    form:
+      href: "https://ikt-service.de/things/Thing1/properties/Humidity"
+      contentType: "application/json"
+      subprotocol: "https"
+    binding:
+      type: knx
+      data:
+        ga: "0/9/16"
+        dpt: "14.001"
+- thing: Thing2
+  description: Another Thing
+  properties:
+  - property: dimming
+    template: Dimming
+    form:
+      href: "https://ikt-service.de/things/Thing2/properties/Dimming"
+      contentType: "application/json"
+      subprotocol: "https"
+    binding:
+      type: knx
+      data:
+        ga: "0/10/15"
+        dpt: "5.001"
+  actions:
+  - action: switch-status
+    template: OnOff
+    form:
+      href: "https://ikt-service.de/things/Thing2/properties/OnOff"
+      contentType: "application/json"
+      subprotocol: "https"
+    binding:
+      type: knx
+      data:
+        ga: "0/10/16"
+        dpt: "1.008"
+- thing: CustomThing
+  description: No template Thing
+  properties:
+  - property: geofence-state
+    description: The geofence state property.
+    form:
+      href: "https://ikt-service.de/things/CustomThing/properties/GeofenceState"
+      contentType: "application/json"
+      subprotocol: "https"
+    binding:
+        type: geo
+        data:
+          p1.lon: 51.51
+          p1.lat: 7.45
+          p2.lon: 51.50
+          p2.lat:  7.47
+    properties:
+    - property: state
+      dtype: boolean
+      description: The current geofence state. true = inside geofence, false = outside geofence
+      min: false
+      max: true
+      unit: null
+  actions:
+  - action: Pressure
+    description: Some pressure property.
+    form:
+      href: "https://ikt-service.de/things/CustomThing/properties/Pressure"
+      contentType: "application/json"
+      subprotocol: "https"
+    binding:
+      type: knx
+      data:
+        ga: "0/10/16"
+        dpt: "1.008"
+    input:
+    - property: setlevel
+      dtype: integer
+      description: The target pressure level in percentage.
+      min: 0
+      max: 100
+      unit: percent
+    output:
+    - property: level
+      dtype: integer
+      description: The current pressure level in percentage.
+      min: 0
+      max: 100
+      unit: percent
+  events:
+  - event: co2-alert
+    template: CO2Alert
+    form:
+      href: "https://ikt-service.de/things/CustomThing/properties/CO2Alert"
+    binding:
+        type: co2
+        data:
+          read: "https://sensor.local/co2"
+  - event: covid-alert
+    description: Covid warning event.
+    form:
+      href: "https://ikt-service.de/things/CustomThing/events/CovidAlert"
+      contentType: "application/json"
+      subprotocol: "https"
+    binding:
+        type: covid
+        data:
+          read: "https://sensor.local/covid"
+    properties:
+    - property: cov-level
+      dtype: integer
+      description: The current of covid danger. 0 = no danger, 100 = highest danger
+      min: 0
+      max: 100
+      unit: percent

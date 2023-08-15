@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.ict.kura.driver.knx" configuration-policy="require" immediate="true" activate="activate" deactivate="deactivate" modified="updated">
+  <implementation class="org.ict.kura.internal.driver.knx.KnxDriver"/>
+  <service>
+    <provide interface="org.eclipse.kura.driver.Driver"/>
+    <provide interface="org.eclipse.kura.configuration.ConfigurableComponent"/>
+  </service>
+  <reference name="AssetProvider" cardinality="1..1" policy="static" interface="org.ict.kura.thing.creator.ThingProvider" bind="setAssetProvider" unbind="unsetAssetProvider"/>
+  <reference name="EventAdmin" cardinality="1..1" policy="static" interface="org.osgi.service.event.EventAdmin" bind="setEventAdmin" unbind="unsetEventAdmin"/>
+  <property name="service.pid" type="String" value="org.ict.kura.driver.knx"/>
+</scr:component>

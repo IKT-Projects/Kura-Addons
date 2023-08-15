@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us">
+  <OCD id="org.ict.kura.driver.knx" name="KnxDriver" description="Configuration parameters | KNX Driver">
+    <AD id="common.thing.folder" type="String" name="Thing folder" description="Thing files with the sensor and actuator configurations generated from the ets. Subfolders are also searched for wot descriptions." default="&lt;path\ to\ the\ folder&gt;/&lt;folder\ name&gt;"/>
+    <AD id="network.gateway.ip" type="String" name="KNX net IP gateway address" description="The IP address of the KNX net IP gateway" default="localhost"/>
+    <AD id="network.gateway.port" type="Integer" name="KNX net IP gateway port" description="The port of the KNX net IP gateway" default="3671"/>
+    <AD id="network.scan.delay" type="Integer" name="KNX read scan delay" description="The KNX read scan delay starts with delay in milliseconds and is started once in the initialization phase and after successful reconnect" default="5000"/>
+    <AD id="reconnect.timeout" type="Long" name="KNX reconnect delay" description="The KNX reconnect delay in milliseconds" default="10000"/>
+  </OCD>
+  <Designate factoryPid="org.ict.kura.driver.knx">
+    <Object ocdref="org.ict.kura.driver.knx"/>
+  </Designate>
+</metatype:MetaData>

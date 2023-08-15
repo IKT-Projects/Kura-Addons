@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us">
+  <OCD id="org.ict.kura.core.database.mongo.MongoDbService" name="MongoDbService" description="Configuration parameters | Mongo DB">
+    <AD id="database.connection.enable" type="Boolean" name="Enable database connection" description="Enable Influx DB" default="false"/>
+    <AD id="database.connection.ip" type="String" name="Database address" description="Host Address for InfluxDb." default="localhost"/>
+    <AD id="database.connection.port" type="Integer" name="Database port" description="Port Address for InfluxDb." default="27017"/>
+    <AD id="database.username" type="String" required="false" name="Username" description="Username."/>
+    <AD id="database.password" type="String" required="false" name="Password" description="Password."/>
+    <AD id="database.name" type="String" name="Database name" description="Database Name." default="myMongoDB"/>
+    <Icon resource="mongo.png" size="32"/>
+  </OCD>
+  <Designate factoryPid="org.ict.kura.core.database.mongo.MongoDbService">
+    <Object ocdref="org.ict.kura.core.database.mongo.MongoDbService"/>
+  </Designate>
+</metatype:MetaData>

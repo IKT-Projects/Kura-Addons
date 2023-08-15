@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us">
+  <OCD id="org.ict.kura.driver.multisensor" name="MultisensorDriver" description="Configuration parameters | Multisensor Driver">
+    <AD id="mdns.enable" type="Boolean" name="Enables the MDNS service" description="Avtivate / deactivate the MDNS service" default="true"/>
+    <AD id="mdns.service.type" type="String" name="MDNS service type" description="The MDNS discover service type, e.g. _tcp.local." default="_tcp.local."/>
+    <AD id="mdns.service.name" type="String" name="MDNS service name" description="The MDNS discover service name, e.g. the multisenssor _multisensor., the room controller _instahubX or in general _wot." default="_multisensor."/>
+    <AD id="description.mqtt.topic" type="String" required="false" name="Description topic (MQTT)" description="An alternative to the dynamic search of thing descriptions using mdns. Here the topics can be configured directly. Use the following syntax: &lt;topic1&gt;;&lt;topic2&gt;;&lt;topicN&gt;" default=""/>
+    <AD id="common.enable" type="Boolean" name="Removes all assets and channels" description="Use this flag first, if you want to remove the driver" default="false"/>
+    <AD id="DataService.target" type="String" name="DataService Target Filter" description="Specifies an OSGi target filter, the pid of the Data Service used to publish messages to the cloud platform." default="(kura.service.pid=changeme)"/>
+  </OCD>
+  <Designate factoryPid="org.ict.kura.driver.multisensor">
+    <Object ocdref="org.ict.kura.driver.multisensor"/>
+  </Designate>
+</metatype:MetaData>

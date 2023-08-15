@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us">
+  <OCD id="org.ict.kura.driver.avm" name="AvmDriver" description="Configuration parameters | AVM Driver">
+    <AD id="fritzbox.ip" type="String" name="FritzBox Ip address" description="Host Address to FritzBox." default="localhost"/>
+    <AD id="fritzbox.username" type="String" name="Fritzbox Smart Home Username" description="Fritzbox Smart Home Username."/>
+    <AD id="fritzbox.password" type="Password" name="Fritzbox Smart Home Password" description="Fritzbox Smart Home Password."/>
+    <AD id="fritzbox.pollinterval" type="Integer" name="Poll interval" description="Pollinterval in s" default="60"/>
+  </OCD>
+  <Designate factoryPid="org.ict.kura.driver.avm">
+    <Object ocdref="org.ict.kura.driver.avm"/>
+  </Designate>
+</metatype:MetaData>

@@ -1,0 +1,24 @@
+things:
+- thing: Dortmund
+  description: weather of dortmund
+  properties:
+  - property: temperature
+    template: Temperature
+    form:
+      href: "http://localhost:8080/services/things/Thing1/properties/temperature"
+      contentType: "application/json"
+      subprotocol: "https"
+    binding:
+      type: owm
+      data:
+        name: "temperature"
+  - property: humidity
+    template: Humidity
+    form:
+      href: "https://ikt-service.de/things/Thing1/properties/humidity"
+      contentType: "application/json"
+      subprotocol: "https"
+    binding:
+      type: owm
+      data:
+        name: "humidity" 

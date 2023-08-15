@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.ict.kura.core.database.influx.InfluxDbService" configuration-policy="require" enabled="true" immediate="true" activate="activate" deactivate="deactivate" modified="updated">
+  <implementation class="org.ict.kura.core.database.influx.internal.InfluxDbServiceImpl"/>
+  <service>
+    <provide interface="org.ict.kura.core.database.influx.InfluxDbService"/>
+  </service>
+  <reference name="CryptoService" cardinality="1..1" policy="static" interface="org.eclipse.kura.crypto.CryptoService" bind="setCryptoService" unbind="unsetCryptoService"/>
+  <property name="service.pid" type="String" value="org.ict.kura.core.database.influx.InfluxDbService"/>
+</scr:component>

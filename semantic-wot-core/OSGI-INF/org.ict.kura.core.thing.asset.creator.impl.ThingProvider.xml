@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.ict.kura.core.thing.asset.creator.impl.ThingProvider" immediate="true" activate="activate" deactivate="deactivate" modified="updated">
+  <implementation class="org.ict.kura.core.thing.asset.creator.impl.ThingProviderImpl"/>
+  <service>
+    <provide interface="org.ict.kura.thing.creator.ThingProvider"/>
+    <provide interface="org.osgi.service.event.EventHandler"/>
+  </service>
+  <reference name="ConfigurationService" cardinality="1..1" policy="static" interface="org.eclipse.kura.configuration.ConfigurationService" bind="setConfigurationService" unbind="unsetConfigurationService"/>
+  <property name="event.topics" type="String" value="things/*"/>
+  <property name="service.pid" type="String" value="org.ict.kura.core.thing.asset.creator.impl.ThingProvider"/>
+</scr:component>

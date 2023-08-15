@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us">
+  <OCD id="org.ict.kura.core.database.influx.InfluxDbService" name="InfluxDbService" description="Configuration parameters | Influx DB">
+    <AD id="database.connection.enable" type="Boolean" name="Enable database connection" description="Enable Influx DB" default="false"/>
+    <AD id="database.connection.ip" type="String" name="Database address" description="Host Address for InfluxDb." default="172.18.0.3"/>
+    <AD id="database.connection.port" type="Integer" name="Database port" description="Port Address for InfluxDb." default="8086"/>
+    <AD id="database.token" type="String" required="false" name="Token" description="Token."/>
+    <AD id="database.org" type="String" required="false" name="Org" description="Org."/>
+    <AD id="database.bucket" type="String" name="Bucket" description="Bucket Name." default="myInfluxDB"/>
+    <AD id="databse.retention.policy" type="String" name="Database retention policy" description="Retention Policy." default="autogen"/>
+    <Icon resource="influx.png" size="32"/>
+  </OCD>
+  <Designate factoryPid="org.ict.kura.core.database.influx.InfluxDbService">
+    <Object ocdref="org.ict.kura.core.database.influx.InfluxDbService"/>
+  </Designate>
+</metatype:MetaData>

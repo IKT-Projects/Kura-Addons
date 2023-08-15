@@ -1,0 +1,137 @@
+<!--
+
+    Copyright © 2023 Institut fuer Kommunikationstechnik - FH-Dortmund (codebase.ikt@fh-dortmund.de)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>${groupId}</groupId>
+	<artifactId>${artifactId}</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>bundle</packaging>
+
+	<name>${projectName}</name>
+
+	<parent>
+		<groupId>org.ict.kura</groupId>
+		<artifactId>kura-bom</artifactId>
+		<version>0.0.5</version>
+	</parent>
+
+	<repositories>
+		<repository>
+			<id>gitlab-maven</id>
+			<url>https://gitlab.ikt.fh-dortmund.de:9443/api/v4/groups/14/-/packages/maven</url>
+		</repository>
+	</repositories>
+
+	<!--<distributionManagement>
+		<repository>
+			<id>gitlab-maven</id>
+			<url>https://gitlab.ikt.fh-dortmund.de:9443/api/v4/projects/${id}/packages/maven</url>
+		</repository>
+
+		<snapshotRepository>
+			<id>gitlab-maven</id>
+			<url>https://gitlab.ikt.fh-dortmund.de:9443/api/v4/projects/${id}/packages/maven</url>
+		</snapshotRepository>
+	</distributionManagement>-->
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.ict</groupId>
+			<artifactId>bot</artifactId>
+			<version>1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/bot-0.0.5-20220211.124943-2.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.ict</groupId>
+			<artifactId>context</artifactId>
+			<version>1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/Context-0.0.1-20220211.124904-4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.ict</groupId>
+			<artifactId>wot</artifactId>
+			<version>1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/wot-0.0.5-20220211.125032-4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.12.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.everit.json</groupId>
+			<artifactId>org.everit.json.schema</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.ict.kura.api</groupId>
+			<artifactId>semantic-api</artifactId>
+			<version>0.2.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ict.kura.core</groupId>
+			<artifactId>semantic-core</artifactId>
+			<version>0.2.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<manifestLocation>META-INF</manifestLocation>
+					<exportScr>true</exportScr>
+					<scrLocation>${project.basedir}</scrLocation>
+					<instructions>
+						<Bundle-Vendor>IKT</Bundle-Vendor>
+						<Import-Package>*</Import-Package>
+						<_removeheaders>Require-Capability,Provide-Capability</_removeheaders>
+						<Bundle-RequiredExecutionEnvironment>JavaSE-11</Bundle-RequiredExecutionEnvironment>
+						<Bundle-ActivationPolicy>lacy</Bundle-ActivationPolicy>
+					</instructions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>de.dentrassi.maven</groupId>
+				<artifactId>osgi-dp</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

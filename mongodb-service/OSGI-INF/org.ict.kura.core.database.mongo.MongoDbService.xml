@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.ict.kura.core.database.mongo.MongoDbService" configuration-policy="require" immediate="true" activate="activate" deactivate="deactivate" modified="updated">
+  <implementation class="org.ict.kura.core.database.mongo.internal.MongoDbServiceImpl"/>
+  <service>
+    <provide interface="org.ict.kura.core.database.mongo.MongoDbService"/>
+    <provide interface="org.eclipse.kura.configuration.ConfigurableComponent"/>
+  </service>
+  <reference name="CryptoService" cardinality="1..1" policy="static" interface="org.eclipse.kura.crypto.CryptoService" bind="setCryptoService" unbind="unsetCryptoService"/>
+  <property name="service.pid" type="String" value="org.ict.kura.core.database.mongo.MongoDbService"/>
+</scr:component>

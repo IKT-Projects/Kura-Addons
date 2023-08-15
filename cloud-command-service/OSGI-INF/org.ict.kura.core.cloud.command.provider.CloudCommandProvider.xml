@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.ict.kura.core.cloud.command.provider.CloudCommandProvider" configuration-policy="require" immediate="true" activate="activate" deactivate="deactivate" modified="updated">
+  <implementation class="org.ict.kura.core.cloud.command.provider.CloudCommandProvider"/>
+  <service>
+    <provide interface="org.eclipse.kura.configuration.ConfigurableComponent"/>
+    <provide interface="org.eclipse.kura.cloudconnection.listener.CloudConnectionListener"/>
+    <provide interface="org.eclipse.kura.cloudconnection.subscriber.listener.CloudSubscriberListener"/>
+  </service>
+  <reference name="AssetService" cardinality="1..1" policy="static" interface="org.eclipse.kura.asset.AssetService" bind="setAssetService" unbind="unsetAssetService"/>
+  <reference name="CloudPublisher" cardinality="0..1" policy="dynamic" interface="org.eclipse.kura.cloudconnection.publisher.CloudPublisher" bind="setCloudPublisher" unbind="unsetCloudPublisher"/>
+  <reference name="CloudSubscriber" cardinality="0..1" policy="dynamic" interface="org.eclipse.kura.cloudconnection.subscriber.CloudSubscriber" bind="setCloudSubscriber" unbind="unsetCloudSubscriber"/>
+  <property name="service.pid" type="String" value="org.ict.kura.core.cloud.command.provider.CloudCommandProvider"/>
+</scr:component>

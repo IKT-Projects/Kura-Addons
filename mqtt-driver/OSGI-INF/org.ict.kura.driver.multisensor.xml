@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.2.0" name="org.ict.kura.driver.multisensor" configuration-policy="require" immediate="true" activate="activate" deactivate="deactivate" modified="updated">
+  <implementation class="org.ict.kura.internal.driver.mqtt.MultisensorDriver"/>
+  <service>
+    <provide interface="org.eclipse.kura.driver.Driver"/>
+    <provide interface="org.eclipse.kura.configuration.ConfigurableComponent"/>
+    <provide interface="org.eclipse.kura.data.listener.DataServiceListener"/>
+    <provide interface="javax.jmdns.ServiceListener"/>
+  </service>
+  <reference name="AssetProvider" cardinality="1..1" policy="static" interface="org.ict.kura.thing.creator.ThingProvider" bind="setAssetProvider" unbind="unsetAssetProvider"/>
+  <reference name="DataService" cardinality="0..1" policy="dynamic" interface="org.eclipse.kura.data.DataService" bind="setDataService" unbind="unsetDataService" policy-option="greedy"/>
+  <reference name="EventAdmin" cardinality="1..1" policy="static" interface="org.osgi.service.event.EventAdmin" bind="setEventAdmin" unbind="unsetEventAdmin"/>
+  <property name="service.pid" type="String" value="org.ict.kura.driver.multisensor"/>
+</scr:component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us">
+  <OCD id="org.ict.kura.persistence.influx.InfluxDbServicePersistence" name="InfluxDbServicePersistence" description="Configuration parameters | Influx DB Persistence Service">
+    <AD id="common.enable" type="Boolean" name="Enable" description="Enables the service" default="true"/>
+    <AD id="InfluxDbService.target" type="String" name="InfluxDB Target Filter" description="Specifies, as an OSGi target filter, the pid of the InfluxDB Service used to publish messages to the cloud platform." default="(kura.service.pid=changeme)"/>
+  </OCD>
+  <Designate factoryPid="org.ict.kura.persistence.influx.InfluxDbServicePersistence">
+    <Object ocdref="org.ict.kura.persistence.influx.InfluxDbServicePersistence"/>
+  </Designate>
+</metatype:MetaData>

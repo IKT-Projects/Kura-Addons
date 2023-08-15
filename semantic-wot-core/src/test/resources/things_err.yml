@@ -1,0 +1,15 @@
+things:
+- thing: Thing1
+  description: My first Thing
+  properties:
+  - property: tempature-outdoor
+    template: Tempreature
+    form:
+      href: "https://ikt-service.de/things/Thing1/properties/Temperature"
+      contentType: "application/json"
+      subprotocol: "https"
+    binding:
+      type: knx
+      data:
+        ga: "0/9/15"
+        dpt: "5.001"

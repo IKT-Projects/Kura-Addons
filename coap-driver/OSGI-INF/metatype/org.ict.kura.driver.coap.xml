@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us">
+  <OCD id="org.ict.kura.driver.coap" name="Coap Driver" description="Configuration parameters | Coap Driver">
+    <AD id="common.enable" type="Boolean" name="Enable" description="Enables the service" default="false"/>
+    <AD id="mdns.service.type" type="String" name="MDNS service type" description="The MDNS discover service type, e.g. _tcp.local." default="_udp.local."/>
+    <AD id="mdns.service.name" type="String" name="MDNS service name" description="The MDNS discover service name, e.g. the multisenssor_wot., the room controller _instahubX." default="_wot."/>
+    <AD id="coap.connection.server.addresses" type="String" required="false" name="CoAP server address" description="CoAP server IP address and port (Layout e.g.: $ip:$port or $ip:$port;$ip:$port for more than one address). If this is empty the driver uses the MDNS discovery service to find CoAP server in the network." default=""/>
+    <AD id="coap.connection.timeOut" type="Integer" name="CoAP server connection timeout" description="Client timeOut for requests." default="0"/>
+  </OCD>
+  <Designate factoryPid="org.ict.kura.driver.coap">
+    <Object ocdref="org.ict.kura.driver.coap"/>
+  </Designate>
+</metatype:MetaData>

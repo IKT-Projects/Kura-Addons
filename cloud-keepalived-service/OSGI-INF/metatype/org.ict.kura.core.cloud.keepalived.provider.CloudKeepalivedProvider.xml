@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us">
+  <OCD id="org.ict.kura.core.cloud.keepalived.provider.CloudKeepalivedProvider" name="CloudKeepalivedService" description="Configuration parameters | Cloud Keepalived Service">
+    <AD id="common.enable" type="Boolean" name="Enable" description="Enables the service" default="true"/>
+    <AD id="CloudPublisher.target" type="String" name="Publisher Target Filter" description="The pid of the Data Service used to publish keepalived messages to the cloud platform." default="(kura.service.pid=changeme)"/>
+    <AD id="strategy" type="String" name="The convert strategy" description="The strategy is supported: Thingsboard payload ({&quot;device&quot;:&quot;Light&quot;})" default="thingsBoard">
+      <Option label="ThingsBoard" value="thingsBoard"/>
+    </AD>
+    <AD id="keepalived.timeout" type="Long" name="The keepalived timeout" description="The keepalived timeout in milliseconds" default="10000"/>
+  </OCD>
+  <Designate factoryPid="org.ict.kura.core.cloud.keepalived.provider.CloudKeepalivedProvider">
+    <Object ocdref="org.ict.kura.core.cloud.keepalived.provider.CloudKeepalivedProvider"/>
+  </Designate>
+</metatype:MetaData>

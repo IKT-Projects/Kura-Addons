@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us">
+  <OCD id="org.ict.kura.core.cloud.telemetry.provider.CloudTelemetryProvider" name="CloudServicePersistence" description="Configuration parameters | Cloud Telemetry Service">
+    <AD id="common.enable" type="Boolean" name="Enable" description="Enables the service" default="true"/>
+    <AD id="CloudPublisher.target" type="String" name="Publisher Target Filter" description="The pid of the Data Service used to publish telemetry messages to the cloud platform." default="(kura.service.pid=changeme)"/>
+    <AD id="strategy" type="String" name="The convert strategy" description="Two strategies are supported: WoT payload ({'time': 1001, &quot; + &quot;'temperature': 20.1}) and Thingsboard payload ({&quot;Device A&quot;:[{&quot;ts&quot;:1001,&quot;values&quot;:{&quot;temperature&quot;:20.1}}]})" default="wot">
+      <Option label="ThingsBoard" value="thingsBoard"/>
+      <Option label="WoT" value="wot"/>
+    </AD>
+  </OCD>
+  <Designate factoryPid="org.ict.kura.core.cloud.telemetry.provider.CloudTelemetryProvider">
+    <Object ocdref="org.ict.kura.core.cloud.telemetry.provider.CloudTelemetryProvider"/>
+  </Designate>
+</metatype:MetaData>
