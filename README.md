@@ -15,7 +15,7 @@ This repository holds several modules for the eclipse kura project. A big focus 
 
 This projcets based on the kura version 5.0.1 and are tested with the [kura emulator](https://www.eclipse.org/downloads/download.php?file=/kura/releases/5.0.1/user_workspace_archive_5.0.1.zip)
 
-Dependencies are managed via Maven (see the [POM](url to pom))
+Dependencies are managed via Maven (see the[url to pom](https://github.com/IKT-Projects/Kura-Projects/blob/main/pom.xml))
 
 ## Components
 
@@ -173,7 +173,7 @@ A archetype for a kura subscriber implementation
 To clone and run this repository, you'll need Git and Java installed on your computer. Type this in your command line:
 ```
 # Clone this repository
-git clone https://gitlab.ikt.fh-dortmund.de:9443/ikt/kura/database/mongodb-service
+git clone https://github.com/IKT-Projects/Kura-Projects.git
 
 # Build the project in Eclipse
 1. Run As => Maven Build and clean install
