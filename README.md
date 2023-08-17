@@ -92,9 +92,9 @@ A archetype for a kura subscriber implementation
 
 ## Requirements
 1. Create a Bundle of the following projects, using the jar with dependencies:
-  -  org.ict.model.jsonld:Context
-  -  org.ict.model:bot
-  -  org.ict.model:wot
+  -  [org.ict.model.jsonld:Context](https://github.com/IKT-Projects/W3C-WoT-BoT-Context.git)
+  -  [org.ict.model:bot](https://github.com/IKT-Projects/W3C-BuildingTopologyOntology.git)
+  -  [org.ict.model:wot](https://github.com/IKT-Projects/W3C-WebOfThings.git)
   ```
   In eclipse it is easy to create a new bundle from sources:
     1. file -> new -> other -> Plugin-Development -> Plugin from existing jars -> next
