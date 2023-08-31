@@ -15,6 +15,8 @@ This repository holds several modules for the eclipse kura project. A big focus 
 
 This projcets based on the kura version 5.0.1 and are tested with the [kura emulator](https://www.eclipse.org/downloads/download.php?file=/kura/releases/5.0.1/user_workspace_archive_5.0.1.zip)
 
+To setting up kura in eclipse follow this [instruction](http://eclipse.github.io/kura/docs-release-5.3/java-application-development/development-environment-setup/#creating-an-eclipse-workspace)
+
 Dependencies are managed via Maven (see the[url to pom](https://github.com/IKT-Projects/Kura-Projects/blob/main/pom.xml))
 
 ## Components
@@ -109,64 +111,33 @@ A archetype for a kura subscriber implementation
   ```
   
 2. Extend Kura with the following bundles:
-   - jsml-1.1.2.jar
-   - jrxtx-1.0.1.jar
-   - json-20220924.jar
-   - stax2-api-4.2.jar
-   - jackson-module-jaxb-annotations-2.11.3.jar
-   - jackson-dataformat-xml-2.11.3.jar
-   - reactive-streams-1.0.4.jar
-   - rxjava-3.1.5.jar
-   - validation-api-1.1.0.Final.jar
-   - swagger-models-2.1.5.jar
-   - swagger-jaxrs2-servlet-initializer-2.1.0.jar
-   - swagger-jaxrs2-2.1.0.jar
-   - swagger-integration-2.1.5.jar
-   - swagger-core-2.1.5.jar
-   - swagger-annotations-2.1.5.jar
-   - snakeyaml-1.27.jar
-   - snakeyaml-1.24.jar
-   - org.everit.json.schema-1.5.1.jar
-   - org.eclipse.kura.rest.configuration.provider-1.0.0-SNAPSHOT.jar
-   - org.eclipse.kura.request.handler.jaxrs-1.0.0-SNAPSHOT.jar
-   - mongo-java-driver-3.12.11.jar
-   - mimepull-1.9.14.jar
-   - json-20200518.jar
-   - json-20160810.jar
-   - joda-time-2.10.5.jar
-   - jmdns-3.5.1.jar
-   - jaxws-api-2.3.1.jar
-   - jaxrs-ri-2.33.jar
-   - jaxb-api-2.3.1.jar
-   - javax.ws.rs-api-2.1.1.jar
-   - javax.persistence-2.2.1.jar
-   - javax.inject-2.5.0-b62.jar
-   - javax.annotation-api-1.3.2.jar
-   - javassist-3.22.0-GA.jar
-   - jakarta.websocket-api-2.0.0.jar
-   - jackson-module-jaxb-annotations-2.10.1.jar
-   - jackson-jaxrs-json-provider-2.10.1.jar
-   - jackson-jaxrs-base-2.10.1.jar
-   - jackson-datatype-jsr310-2.11.3.jar
-   - jackson-datatype-jsr310-2.10.1.jar
-   - jackson-dataformat-yaml-2.11.3.jar
-   - jackson-dataformat-yaml-2.10.1.jar
-   - jackson-databind-2.11.3.jar
-   - jackson-databind-2.10.1.jar
-   - jackson-core-2.11.3.jar
-   - jackson-core-2.10.1.jar
-   - jackson-annotations-2.12.0.jar
-   - jackson-annotations-2.11.3.jar
-   - jackson-annotations-2.10.1.jar
-   - guava-19.0.jar
-   - gson-2.8.5.jar
-   - element-connector-2.2.3.jar
-   - commons-validator-1.5.1.jar
-   - commons-lang3-3.7.jar
-   - commons-digester-1.8.1.jar
-   - classgraph-4.8.90.jar
-   - classgraph-4.6.32.jar
    - californium-core-2.2.3.jar
+   - commons-digester-1.8.1.jar
+   - commons-lang3-3.7.jar
+   - commons-validator-1.5.1.jar
+   - element-connector-2.2.3.jar
+   - gson-2.8.5.jar
+   - guava-19.0.jar
+   - jackson-annotations-2.11.3.jar
+   - jackson-core-2.11.3.jar
+   - jackson-databind-2.11.3.jar
+   - jackson-dataformat-xml-2.11.3.jar
+   - jackson-dataformat-yaml-2.11.3.jar
+   - jackson-datatype-jsr310-2.11.3.jar
+   - jackson-module-jaxb-annotations-2.11.3.jar
+   - javassist-3.22.0-GA.jar
+   - jmdns-3.5.1.jar
+   - joda-time-2.10.5.jar
+   - jrxtx-1.0.1.jar
+   - jsml-1.1.2.jar
+   - json-20160810.jar
+   - mongo-java-driver-3.12.11.jar
+   - org.everit.json.schema-1.5.1.jar
+   - org.ict.kura.influxdb-client-java-osgi_1.0.0.jar
+   - org.ict.kura.wot_1.0.1.jar
+   - rxjava-3.1.5.jar
+   - snakeyaml-1.27.jar
+   - stax2-api-4.2.jar
 
 
 ### Installing
